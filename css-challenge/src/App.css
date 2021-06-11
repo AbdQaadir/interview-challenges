@@ -48,6 +48,8 @@ body {
 .section-header i{
   cursor: pointer;
 }
+
+/* Container Header */
 .container-header{
   width: 100%;
   display: flex;
@@ -73,11 +75,17 @@ body {
   background: rgba(255, 255, 255, 0.2);
   outline: none;
   border: none;
+  cursor: pointer;
+}
+.container-header button:focus{
+  background: rgba(255, 255, 255, 0.5);
 }
 .container-header button i{
   font-size: 20px;
   color: #fff;
 }
+
+/* SearchBar */
 #input-bar{
   width: 100%;
   margin: 20px 0;
@@ -118,7 +126,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* gap: 30px; */
 }
 .feeling-wrapper .feeling-item{
   min-width: 20%;
@@ -136,6 +143,9 @@ body {
   cursor: pointer;
   width: 90%;
   margin-bottom: 8px;
+}
+.feeling-wrapper .feeling-item button:focus{
+  background: rgba(255, 255, 255, 0.5);
 }
 .feeling-wrapper .feeling-item button i{
   color: #fff;
@@ -216,6 +226,7 @@ body {
   font-size: 10px;
   opacity: .4;
 }
+
 /* Bottom Bar */
 .bottom-bar{
   box-shadow: 0 -4px 10px rgba(0,0,0,.1);
@@ -238,21 +249,25 @@ body {
 }
 .bottom-bar ul li button{
   background: none;
-  padding: 15px 0;
   outline: none;
   border: none;
   position: relative;
   transition: all .2s ease-in-out;
+  cursor: pointer;
+  color: rgb(62, 126, 184, .3);
+  padding: 15px 7px;
+}
+.bottom-bar ul li button:hover,
+.bottom-bar ul li button.active{
+  color: rgb(62, 126, 184);
+}
+.bottom-bar ul li button:focus{
+  background: rgb(62, 126, 184, .1);
 }
 .bottom-bar ul li button i {
   font-size: 20px;
-  color: rgb(62, 126, 184, .3);
 }
 
-.bottom-bar ul li button.active i,
-.bottom-bar ul li button:hover i{
-  color: rgb(62, 126, 184);
-}
 .bottom-bar ul li button.active::after{
   content: "";
   position: absolute;
