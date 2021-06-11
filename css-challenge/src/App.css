@@ -1,12 +1,11 @@
 * {
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 body {
   background-color: rgb(229, 233, 244);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,6 +13,8 @@ body {
 .App {
   background-color: rgb(229, 233, 244);
   padding: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .Container {
@@ -25,4 +26,253 @@ body {
   flex-direction: column;
   font-weight: bold;
   padding: 40px;
+  min-height: 90vh;
+  width: 100%;
+  max-width: 350px;
+  margin: initial auto;
+  position: relative;
+  overflow: hidden;
+}
+/* Generic Section Header */
+.section-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.section-header h2{
+  font-size: 15px;
+  font-weight: 800;
+  margin: 10px 0;
+}
+.section-header i{
+  cursor: pointer;
+}
+.container-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-header .left{
+  width: 70%
+}
+.container-header h1{
+  font-size: 20px;
+  font-weight: 800;
+  margin: 10px 0;
+}
+.container-header .header-date{
+  font-size: 16px;
+  opacity: .5;
+  font-weight: 600;
+}
+.container-header button{
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  border: none;
+}
+.container-header button i{
+  font-size: 20px;
+  color: #fff;
+}
+#input-bar{
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+#input-bar i{
+  position: absolute;
+  font-size: 20px;
+  padding: 16px;
+  opacity: .6;
+}
+.search-input{
+  padding: 16px 10px 16px 50px;
+  color: #fff;
+  width: 100%;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+.search-input::placeholder{
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.search-input:focus{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Feeling */
+.feeling{
+  width: 100%;
+}
+.feeling-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 30px; */
+}
+.feeling-wrapper .feeling-item{
+  min-width: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feeling-wrapper .feeling-item button{
+  padding: 12px 5px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  margin-bottom: 8px;
+}
+.feeling-wrapper .feeling-item button i{
+  color: #fff;
+  font-size: 25px;
+  font-style: normal;
+}
+.feeling-wrapper .feeling-item span{
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Exercises */
+.exercises{
+  position: absolute;
+  bottom: 0;
+  height: 36vh;
+  border-radius: 30px;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  padding: 14px 30px 100px 30px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.exercises::-webkit-scrollbar {
+  display: none;
+}
+
+.exercise-wrapper{
+  width: 100%;
+  padding: 0 10px;
+}
+.exercise-item{
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+.exercise-item:hover,
+.exercise-item:focus{
+  box-shadow: 0px 30px 20px 10px rgba(128, 99, 99, 0.1);
+  z-index: 99999;
+}
+.exercise-item i{
+  width: 10%;
+}
+.exercise-item i:first-child{
+  font-size: 20px;
+  background: orange;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+}
+.exercise-item i:nth-child(3){
+  opacity: .3;
+}
+.exercise-text{
+  width: 70%;
+  padding: 0 5px;
+}
+.exercise-text h2{
+  font-size: 14px;
+  margin: 0;
+}
+.exercise-text span{
+  font-size: 10px;
+  opacity: .4;
+}
+/* Bottom Bar */
+.bottom-bar{
+  box-shadow: 0 -4px 10px rgba(0,0,0,.1);
+  width: 100%;
+  padding: 4px 10px;
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+}
+.bottom-bar ul{
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.bottom-bar ul li{
+  padding: 0;
+}
+.bottom-bar ul li button{
+  background: none;
+  padding: 15px 0;
+  outline: none;
+  border: none;
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+.bottom-bar ul li button i {
+  font-size: 20px;
+  color: rgb(62, 126, 184, .3);
+}
+
+.bottom-bar ul li button.active i,
+.bottom-bar ul li button:hover i{
+  color: rgb(62, 126, 184);
+}
+.bottom-bar ul li button.active::after{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: rgb(62, 126, 184);
+  border-radius: 10px 10px 0 0;
+} 
+
+
+
+@media screen and (max-width: 400px) {
+  .App{
+    padding: 20px;
+  }
+  .Container {
+    padding: 20px;
+    margin: 0px;
+  }
 }
