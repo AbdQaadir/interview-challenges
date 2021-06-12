@@ -112,9 +112,10 @@ describe('moveEvent', () => {
         expect(() => moveEventToDay( moveEventDemoData, 5676, "3")).toThrow(Error);
     });
     it('moves event and return data with no error', () => {
-        expect(() => moveEventToDay( moveEventDemoData, 5676, 3)).not.toThrow(Error);
 
-        expect(moveEventToDay(moveEventDemoData, 5676, 3)).toEqual(moveEventExpectedResult);
+        const results = moveEventToDay(moveEventDemoData, 5676, 3);
+        
+        expect(results).toMatchObject(moveEventExpectedResult);
     });
 
 

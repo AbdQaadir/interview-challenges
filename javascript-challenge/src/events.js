@@ -141,7 +141,8 @@ const moveEventToDay = (eventsByDay, id, toDay) => {
   return eventsByDay; 
 };
 
-moveEventToDay({
+
+const moveEventDemoData = {
   0: [
     {
       id: 106,
@@ -158,11 +159,13 @@ moveEventToDay({
       title: 'Daily dinner',
     },
   ],
-},
-5676,
-3
-)
+}
 
+const data = moveEventToDay(moveEventDemoData, 5676, 3);
+
+console.log(data);
+
+console.log(Object.keys(data));
 module.exports = {
   moveEventToDay, 
   groupEventsByDay
