@@ -2,6 +2,7 @@
 
 ## Task
 
+
 We would like you to implement and test some functions in javascript.
 
 In the `src` folder there are two files: `events.js` and `events.test.js`.
