@@ -99,14 +99,13 @@ const moveEventToDay = (eventsByDay, id, toDay) => {
   
   const eventsArr = Object.entries(eventsByDay);
 
+  // Validate inputs
   if(!eventsArr.length || !id || !toDay) throw  new Error("Input cannot be empty!");
-  
   if(typeof id !== "number") throw new Error("Event ID must be a number");
-
   if(typeof toDay !== "number") throw new Error("toDay must be a number");
 
 
-  let eventToBeMoved, key;
+  let eventToBeMoved, previousKey;
   
   eventsArr.forEach((event) => {
         
@@ -114,20 +113,20 @@ const moveEventToDay = (eventsByDay, id, toDay) => {
     
     if(found){
       eventToBeMoved = found;
-      key = event[0];
+      previousKey = event[0];
     }
   })
 
   // Remove the element from it's previous position
-  if(eventsByDay[key].length === 1){
-    delete eventsByDay[key];
+  if(eventsByDay[previousKey].length === 1){
+    delete eventsByDay[previousKey];
   }else{
-    eventsByDay[key] = eventsByDay[key].filter((event) => event.id !==  id);
+    eventsByDay[previousKey] = eventsByDay[previousKey].filter((event) => event.id !==  id);
   }
 
 
   // Number of days to increment by
-  const increment = Number(toDay) - Number(key);
+  const increment = Number(toDay) - Number(previousKey);
 
   const { startsAt, endsAt } = eventToBeMoved;
 
@@ -141,31 +140,6 @@ const moveEventToDay = (eventsByDay, id, toDay) => {
   return eventsByDay; 
 };
 
-
-const moveEventDemoData = {
-  0: [
-    {
-      id: 106,
-      startsAt: '2021-01-27T13:01:11Z',
-      endsAt: '2021-01-27T15:01:11Z',
-      title: 'Daily walk',
-    },
-  ],
-  2: [
-    {
-      id: 5676,
-      startsAt: '2021-01-29T13:01:11Z',
-      endsAt: '2021-01-29T15:01:11Z',
-      title: 'Daily dinner',
-    },
-  ],
-}
-
-const data = moveEventToDay(moveEventDemoData, 5676, 3);
-
-console.log(data);
-
-console.log(Object.keys(data));
 module.exports = {
   moveEventToDay, 
   groupEventsByDay
