@@ -114,10 +114,9 @@ describe('moveEvent', () => {
     it('moves event and return data with no error', () => {
 
         const results = moveEventToDay(moveEventDemoData, 5676, 3);
-        
+
         expect(results).toMatchObject(moveEventExpectedResult);
     });
-
 
 })
 

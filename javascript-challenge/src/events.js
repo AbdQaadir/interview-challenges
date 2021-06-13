@@ -1,10 +1,8 @@
-const { parseISO } = require('date-fns');
-var differenceInDays = require('date-fns/differenceInDays');
-var add = require('date-fns/add');
-var parseJSON = require('date-fns/parseJSON');
+const { parseISO, differenceInDays, add } = require('date-fns');
 
-var moment = require('moment'); // require
+const moment = require('moment'); // require
 moment().format(); 
+
 /** 
   An event could look like this:
   ```
