@@ -46,9 +46,11 @@ const groupEventsByDay = (events = []) => {
     const diff = differenceInDays(parseISO(event.endsAt), parseISO(event.startsAt))
 
     if(results[diff]){
-      results[diff] = [...results[diff], {...event}].sort((a,b) => {
+      const newEvents = [...results[diff], {...event}];
+      const sortedEvents = newEvents.sort((a,b) => {
         return a.startsAt < b.startsAt ? -1 : a.startsAt > b.startsAt ? 1 : 0;
       });
+      results[diff] = [...sortedEvents];
     }else{
       results[diff] = [{...event}];
     }
@@ -107,10 +109,10 @@ const moveEventToDay = (eventsByDay, id, toDay) => {
   
   eventsArr.forEach((event) => {
         
-    const found = event[1].length > 1 ? event[1].find((item) => item.id === id) : event[1][0];
+    const eventExists = event[1].length > 1 ? event[1].find((item) => item.id === id) : event[1][0];
     
-    if(found){
-      eventToBeMoved = found;
+    if(eventExists){
+      eventToBeMoved = eventExists;
       previousKey = event[0];
     }
   })
